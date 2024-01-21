@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+	<title>PID Tuning</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> -->
+</head>
+<body>
+	<div class="column">
+		<h1 class="title">PID Tuning</h1>
+
+		<div class="sliders_container row">
+			<div class="slider">
+				<label for="direct" id="direct_label">direct: 0</label>
+				<input class="slider" type="range" name="direct" id="direct" min="0" max="100" value="0">
+			</div>
+			<div class="slider">
+				<label for="desired" id="desired_label">desired: 0</label>
+				<input class="slider" type="range" name="desired" id="desired" min="-40" max="40" value="0">
+			</div>
+			<div class="slider">
+				<label for="kp" id="kp_label">kp: 0.00</label>
+				<input class="slider" type="range" name="kp" id="kp" min="0" max="1000" value="0">
+			</div>
+			<div class="slider">
+				<label for="kd" id="kd_label">kd: 0.00</label>
+				<input class="slider" type="range" name="kd" id="kd" min="0" max="1000" value="0">
+			</div>
+			<div class="slider">
+				<label for="ki" id="ki_label">ki: 0.00</label>
+				<input class="slider" type="range" name="ki" id="ki" min="0" max="1000" value="0">
+			</div>
+		</div>
+	</div>	
+	<div class="center column">
+		<div id="output">
+			Data will be here
+		</div>
+
+		<div class="row">
+			<div>
+				<canvas id="plot1"></canvas>
+			</div>
+			<!-- <div>
+				<canvas id="plot2"></canvas>
+			</div>
+			<div>
+				<canvas id="plot3"></canvas>
+			</div>
+			<div>
+				<canvas id="plot4"></canvas>
+			</div> -->
+		</div>
+		<div class="row">
+			<div>
+				<canvas id="motor1"></canvas>
+			</div>
+			<div>
+				<canvas id="motor2"></canvas>
+			</div>
+			<div>
+				<canvas id="motor3"></canvas>
+			</div>
+			<div>
+				<canvas id="motor4"></canvas>
+			</div>
+		</div>
+	</div>
+
+    <!-- <script src="node_modules/chart.js/dist/chart.min.js"></script> -->
+    <script src="{% static 'node_modules/chart.js/dist/chart.min.js' %}"></script>
+    <script src="{% static 'node_modules/luxon/build/global/luxon.min.js' %}"></script>
+    <script src="{% static 'node_modules/chartjs-plugin-streaming/dist/chartjs-plugin-streaming.min.js' %}"></script>
+    <script src="{% static 'node_modules/chartjs-adapter-luxon/dist/chartjs-adapter-luxon.min.js' %}"></script>
+
+	<script src="{% static 'index.js' %}"></script>
+</body>
+</html>

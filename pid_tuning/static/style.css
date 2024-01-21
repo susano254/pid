@@ -1,0 +1,33 @@
+.column {
+	display: flex;
+	flex-direction: column;
+}
+.row {
+	display: flex;
+	flex-direction: row;
+}
+.title {
+	display: flex;
+	justify-content: center;
+}
+
+.sliders_container {
+	margin: 50px;
+	justify-content: space-around;
+}
+.slider {
+	width: 200px;
+}
+
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#output {
+	margin-top: 5px;
+	width: 100%;
+}
