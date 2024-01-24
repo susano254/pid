@@ -3,8 +3,9 @@ import serial
 board_serial = serial.Serial(port='COM5', baudrate=115200, timeout=.1)
 
 def write_bytes(data):
-	board_serial.write(bytes(data, 'utf-8'))
-	board_serial.write(bytes('\n', 'utf-8'))
+    data += '\n'
+    print(data)
+    board_serial.write(bytes(data, 'utf-8'))
 
 # def read_bytes():
 # 	data = str(board_serial.readline())
