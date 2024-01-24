@@ -69,7 +69,7 @@ source.addEventListener("message", function(event) {
 
 
 
-const refresh_rate = 1.0/360.0 
+const refresh_rate = 1.0/60.0 
 defineChart = (id, i) =>
 	new Chart(
 		document.getElementById(id),
